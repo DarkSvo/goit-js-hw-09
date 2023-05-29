@@ -21,8 +21,8 @@ formEl.addEventListener('submit', function (event) {
   const delayValue = document.querySelector("input[name = 'delay']");
   const amountValue = document.querySelector("input[name = 'amount']");
   const stepValue = document.querySelector("input[name = 'step']");
-  for (let i = 1; i <= amountValue.value; i += 1) {
-    createPromise(i, +delayValue.value + stepValue.value * i)
+  for (let i = 0; i <= amountValue.value; i += 1) {
+    createPromise(i+1, +delayValue.value + stepValue.value * i)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
